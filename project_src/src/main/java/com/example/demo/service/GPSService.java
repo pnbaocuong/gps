@@ -68,8 +68,8 @@ public class GPSService {
 		if (!GPSType.isValid(fileExtension)) {
 			throw new InvalidFileNameException(multipart.getOriginalFilename(), "Invalid File extension");
 		}
-
-		return GPSType.valueOf(fileExtension);
+		
+		return GPSType.valueOf(fileExtension.toUpperCase());
 	}
 
 	public Page<GPXDTO> getLatestTracks(int page, int size) {
